@@ -1,0 +1,8 @@
+# Third-party packages imported by the scripts (directly, or by pandas for parquet / time zones), pinned to the versions
+# the results were produced and checked with. Python 3.14.0 (config.py uses tomllib: Python >= 3.11 required).
+numpy==2.4.2
+pandas==3.0.1
+pyarrow==23.0.1
+numba==0.67.0
+# time-zone database for the New York clock (needed on Windows; pandas dependency elsewhere)
+tzdata==2025.3

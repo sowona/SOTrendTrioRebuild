@@ -1,0 +1,15 @@
+{
+ "symbols": {
+  "US100.cash": {
+   "swap_long": -6.9243,
+   "swap_short": 0.034,
+   "unit": "cTrader swapCalculationType 'pips', pipPosition 0 => 1 pip = 1.0 index point. Charge per swap night = swap x 1.0 x volume in units, in the quote currency (USD); lotSize = 1 unit, so per 1.00 lot = swap USD",
+   "triple_day": "friday",
+   "swap_time": "20:59 (UTC, report utcOffset 0)",
+   "pip_size": 1.0,
+   "quote_currency": "USD",
+   "source_date": "25/10/2026",
+   "note": "Broker swap for US100.cash as reported by a cTrader backtest on 25/10/2026 (one date). Index points per 1 unit per night, charged at the daily rollover, Friday x3. The rebuild applies this one value to every night of 2020-2026."
+  }
+ }
+}

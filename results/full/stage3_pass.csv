@@ -1,0 +1,6 @@
+item,E1 n,E1 mean [CI],E2 n,E2 mean [CI],CI>0 both eras,beats control (i) both eras,beats unconditional ctrl both eras,THIN,PASS
+S1 SuperTrend 5m,464,"3.93 [-1.95, 10.83]",447,"5.34 [-3.72, 16.79]",no,no,no,,no pass
+S2 UltimateMA 4m,2418,"-0.39 [-2.71, 1.97]",2306,"-0.43 [-4.15, 3.23]",no,no,no,,no pass
+S3 AlphaTrend 2m,606,"-4.70 [-10.56, 1.53]",566,"0.36 [-7.92, 8.68]",no,no,no,,no pass
+S4 AlphaTrend 1h,118,"21.76 [3.86, 39.47]",97,"12.47 [-9.85, 36.62]",no,no,no,THIN,no pass
+system,3062,"-0.09 [-2.35, 1.90]",2887,"0.32 [-2.76, 3.61]",no,no,no,,no pass

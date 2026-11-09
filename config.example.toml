@@ -1,0 +1,19 @@
+# Copy to config.toml (not committed) and set the paths for your machine.
+# Every key can also be set as an environment variable TT_<KEY> (the environment variable wins).
+# Relative paths are relative to the repository root. A key that is not set raises an error; there are no defaults.
+#
+# The values below point at the shipped sample (data/sample). scripts/run_sample.py and scripts/check_sample.py
+# always use the sample, whatever this file says; the full pipeline (b11_stage0.py, b11_run.py, export_trades.py) uses these keys.
+
+# Folder with the cTrader bar exports US100.cash_Minute.parquet, _Minute5, _Minute15, _Hour (see DATA.md).
+# For the full history, point it at your own export folder (the author's is <home>/Documents/cAlgo/Data).
+DATA_DIR = 'data/sample'
+
+# Output folder (tables.md, stage CSVs, trade lists, indicator cache).
+OUT_DIR = 'out/full'
+
+# Per-minute spread file (columns Date, spread in index points). See DATA.md.
+SPREAD1M_PATH = 'data/sample/US100.cash_spread1m.parquet'
+
+# Swap snapshot JSON: {"symbols": {"US100.cash": {"swap_long": ..., "swap_short": ...}}} in index points per night.
+SWAP_PATH = 'data/sample/swap_snapshot_US100.cash_25-10-2026.json'

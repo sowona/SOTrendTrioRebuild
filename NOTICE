@@ -1,0 +1,25 @@
+SOTrendTrioRebuild
+Copyright 2026 the author of this repository
+
+The Apache License 2.0 (LICENSE) covers the code written for this repository (scripts/, config.py, the python ports in
+indicators/).
+
+Third-party notices
+
+The trading logic of the indicators belongs to their TradingView authors. The ports in indicators/ are independent python
+re-implementations of the published logic; they contain no Pine source code. The original scripts and the licences under
+which they are published:
+
+- SuperTrend - KivancOzbilgic (TradingView). Mozilla Public License 2.0.
+- AlphaTrend - KivancOzbilgic (TradingView). Mozilla Public License 2.0.
+- CM_Ultimate_MA_MTF (V2) - ChrisMoody (TradingView, 2014). Published as an open-source script; the script carries no
+  licence header (TradingView House Rules apply).
+- CM Sling Shot System - ChrisMoody (TradingView). Published as an open-source script (TradingView House Rules apply).
+- Chandelier Exit - Alex Orekhov (everget) (TradingView, 2019). GPL-3.0 ("Chandelier Exit script may be freely
+  distributed under the terms of the GPL-3.0 license").
+- DMI / ADX - TradingView built-in `ta.dmi`.
+
+Data
+
+The US100.cash bar sample in data/sample/ is broker price data from a cTrader account, shipped only so that the pipeline can
+be run and checked; it is not covered by the Apache License and is provided for verification of this repository only.

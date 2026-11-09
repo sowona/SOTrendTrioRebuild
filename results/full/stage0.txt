@@ -1,0 +1,122 @@
+input manifest written: {'US100.cash_Minute.parquet': '3a520ceca509', 'US100.cash_Minute5.parquet': 'a42a04afcfb0', 'US100.cash_Minute15.parquet': '4aa2a4188767', 'US100.cash_Hour.parquet': '8e70d1a46184', 'US100.cash_spread1m.parquet': '2e6b5dd57061', 'E1_SWAP.json': 'c982ab0f83bf'}
+== DATA CHECKS ==
+ Minute: 2080018 bars 02/12/2020 00:00 - 06/11/2026 21:48; find_holes(72h): none; dup dates 0
+ Minute5: 416082 bars 02/12/2020 00:00 - 06/11/2026 21:40; find_holes(72h): none; dup dates 0
+ Minute15: 140105 bars 02/12/2020 00:00 - 06/11/2026 21:30; find_holes(72h): none; dup dates 0
+ Hour: 35055 bars 02/12/2020 00:00 - 06/11/2026 20:00; find_holes(72h): none; dup dates 0
+ m1 gaps > 10 min: 1617; not session break (start 16-22 UTC, end 17-23 UTC): 15
+   02/04/2021 13:14 -> 04/04/2021 22:54 (3460 min)
+   26/05/2021 02:09 -> 26/05/2021 02:22 (13 min)
+   12/12/2022 13:36 -> 12/12/2022 14:08 (32 min)
+   07/04/2023 13:14 -> 09/04/2023 22:05 (3411 min)
+   20/11/2024 00:00 -> 20/11/2024 00:29 (29 min)
+   09/01/2025 14:29 -> 09/01/2025 23:05 (516 min)
+   28/11/2025 02:45 -> 28/11/2025 02:57 (12 min)
+   28/11/2025 02:57 -> 28/11/2025 03:16 (19 min)
+   28/11/2025 03:24 -> 28/11/2025 04:00 (36 min)
+   28/11/2025 04:00 -> 28/11/2025 04:12 (12 min)
+   28/11/2025 04:12 -> 28/11/2025 04:36 (24 min)
+   28/11/2025 04:36 -> 28/11/2025 06:00 (84 min)
+   28/11/2025 06:00 -> 28/11/2025 06:48 (48 min)
+   28/11/2025 06:48 -> 28/11/2025 13:50 (422 min)
+   03/04/2026 13:14 -> 05/04/2026 22:05 (3411 min)
+ m1 gaps of 2..10 min (missing minutes inside a session): 160
+ known cTrader-server hole 10-11/08/2026: 2026-08-10 m1 bars 1365, M5 bars 273 (a full day is 1365 / 273): NO hole in the US100.cash exports
+ known cTrader-server hole 10-11/08/2026: 2026-08-11 m1 bars 1365, M5 bars 273 (a full day is 1365 / 273): NO hole in the US100.cash exports
+ 2m bars: 1040868, with missing minutes 1718 (0.17 %); 4m bars: 521162, with missing minutes 3126 (0.60 %)
+ builder validation: m1-built 5m vs exported Minute5: 416082 common bars, OHLC identical on 100.000 %; bars only in built 5, only in exported 0
+ spread: {'first_real': '2021-12-01 00:00:00', 'last_real': '2026-10-25 22:37:00', 'minutes': 2080018, 'real': 1706849, 'substituted_in_span': 9237, 'substituted_other': 6792, 'estimate_outside_span': 357140, 'median_real': 1.5}
+ spread flag by year (0 real, 1 substituted, 2 estimate): 2020: 0/0/100 %; 2021: 9/0/91 %; 2022: 100/0/0 %; 2023: 100/0/0 %; 2024: 100/0/0 %; 2025: 100/0/0 %; 2026: 92/5/2 %
+ spread median points by year: 2020: 0.60; 2021: 0.60; 2022: 0.70; 2023: 1.40; 2024: 1.60; 2025: 1.50; 2026: 1.55
+ swap snapshot: long -6.9243 short 0.034 points per night (Friday x3), one date 25/10/2026
+ NY clock check winter (Dec-Feb): tick-volume peak minute 09:30 NY; 09:30 / 09:29 ratio 1.54; 16:00 / 15:59 ratio 0.91
+ NY clock check summer (Jun-Aug): tick-volume peak minute 09:30 NY; 09:30 / 09:29 ratio 1.55; 16:00 / 15:59 ratio 0.92
+
+== PORT CHECKS: ports vs literal Pine scalars written from SPEC_B11.md (real US100.cash slices) ==
+ SuperTrend M5 slice, mult 2.0, changeATR True
+   up: MATCH
+   dn: MATCH
+   trend: MATCH
+   buy flags: MATCH (84 buys)
+ SuperTrend M5 slice, mult 2.0, changeATR False
+   up: MATCH
+   dn: MATCH
+   trend: MATCH
+   buy flags: MATCH (83 buys)
+ SuperTrend M5 slice, mult 3.0, changeATR True
+   up: MATCH
+   dn: MATCH
+   trend: MATCH
+   buy flags: MATCH (53 buys)
+ SuperTrend M5 slice, mult 3.0, changeATR False
+   up: MATCH
+   dn: MATCH
+   trend: MATCH
+   buy flags: MATCH (52 buys)
+ AlphaTrend H1 slice, MFI(TickVolume) path
+   AlphaTrend: MATCH
+   BUY: MATCH (14), SELL: MATCH (13)
+ AlphaTrend H1 slice, RSI path
+   AlphaTrend: MATCH
+   BUY: MATCH (14), SELL: MATCH (13)
+ AlphaTrend M5 slice, MFI(TickVolume) path
+   AlphaTrend: MATCH
+   BUY: MATCH (21), SELL: MATCH (21)
+ AlphaTrend M5 slice, RSI path
+   AlphaTrend: MATCH
+   BUY: MATCH (23), SELL: MATCH (22)
+ PORT CHECK RESULT: all match, no port fix needed
+
+== SIGNAL COUNTS BEFORE OUTCOMES (causal); raw = HTF signal bars after warm-up, filter = after the filter series, window = at the m1 entry minute ==
+| setup | stage | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | all |
+|---|---|---|---|---|---|---|---|---|
+| S1 SuperTrend 5m | raw | 1695 | 1663 | 1684 | 1628 | 1666 | 1427 | 9763 |
+| S1 SuperTrend 5m | filter | 656 | 601 | 633 | 611 | 662 | 522 | 3685 |
+| S1 SuperTrend 5m | window | 168 | 148 | 148 | 149 | 161 | 137 | 911 |
+| S2 UltimateMA 4m | raw | 3303 | 3200 | 3263 | 3293 | 3178 | 2685 | 18922 |
+| S2 UltimateMA 4m | filter | 1886 | 1449 | 1854 | 1907 | 1756 | 1442 | 10294 |
+| S2 UltimateMA 4m | window | 1886 | 1449 | 1854 | 1907 | 1756 | 1442 | 10294 |
+| S3 AlphaTrend 2m | raw | 4766 | 4768 | 4680 | 4658 | 4691 | 3862 | 27425 |
+| S3 AlphaTrend 2m | filter | 2605 | 2575 | 2371 | 2468 | 2464 | 2011 | 14494 |
+| S3 AlphaTrend 2m | window | 307 | 275 | 281 | 267 | 270 | 227 | 1627 |
+| S4 AlphaTrend 1h | raw | 170 | 149 | 149 | 132 | 156 | 138 | 894 |
+| S4 AlphaTrend 1h | filter | 96 | 78 | 86 | 72 | 81 | 75 | 488 |
+| S4 AlphaTrend 1h | window | 36 | 37 | 45 | 28 | 35 | 34 | 215 |
+
+== ENTRY-MINUTE TEST (causal): clock minute (UTC) of the entry m1 bar mod N; causal expects 0, look-ahead expects 1 ==
+ S1 SuperTrend 5m: entries 911, minute mod 5 == 0: 100.00 %
+ S2 UltimateMA 4m: entries 10294, minute mod 4 == 0: 99.75 % (others: {np.int64(1): np.int64(26)} - gap-delayed entries)
+ S3 AlphaTrend 2m: entries 1627, minute mod 2 == 0: 100.00 %
+ S4 AlphaTrend 1h: entries 215, minute mod 60 == 0: 100.00 %
+
+== SIGNAL COUNTS BEFORE OUTCOMES (lookahead); raw = HTF signal bars after warm-up, filter = after the filter series, window = at the m1 entry minute ==
+| setup | stage | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | all |
+|---|---|---|---|---|---|---|---|---|
+| S1 SuperTrend 5m | raw | 1695 | 1663 | 1684 | 1628 | 1666 | 1427 | 9763 |
+| S1 SuperTrend 5m | filter | 741 | 694 | 738 | 705 | 759 | 602 | 4239 |
+| S1 SuperTrend 5m | window | 206 | 193 | 188 | 188 | 204 | 166 | 1145 |
+| S2 UltimateMA 4m | raw | 3303 | 3200 | 3263 | 3293 | 3178 | 2685 | 18922 |
+| S2 UltimateMA 4m | filter | 1888 | 1452 | 1856 | 1908 | 1761 | 1451 | 10316 |
+| S2 UltimateMA 4m | window | 1888 | 1452 | 1856 | 1908 | 1761 | 1451 | 10316 |
+| S3 AlphaTrend 2m | raw | 4766 | 4768 | 4680 | 4658 | 4691 | 3862 | 27425 |
+| S3 AlphaTrend 2m | filter | 2605 | 2575 | 2371 | 2468 | 2464 | 2011 | 14494 |
+| S3 AlphaTrend 2m | window | 302 | 273 | 277 | 268 | 269 | 223 | 1612 |
+| S4 AlphaTrend 1h | raw | 170 | 149 | 149 | 132 | 156 | 138 | 894 |
+| S4 AlphaTrend 1h | filter | 96 | 78 | 86 | 72 | 81 | 75 | 488 |
+| S4 AlphaTrend 1h | window | 36 | 37 | 41 | 27 | 37 | 36 | 214 |
+
+== ENTRY-MINUTE TEST (lookahead): clock minute (UTC) of the entry m1 bar mod N; causal expects 0, look-ahead expects 1 ==
+ S1 SuperTrend 5m: entries 1145, minute mod 5 == 1: 100.00 %
+ S2 UltimateMA 4m: entries 10316, minute mod 4 == 1: 99.99 % (others: {np.int64(0): np.int64(1)} - gap-delayed entries)
+ S3 AlphaTrend 2m: entries 1612, minute mod 2 == 1: 100.00 %
+ S4 AlphaTrend 1h: entries 214, minute mod 60 == 1: 100.00 %
+
+full-run gross system trades (for the truncation reference): 5946
+
+== TRUNCATION INVARIANCE (3 cuts): world truncated at the cut; signals on [0, n_cut) must equal the full run; closed trades must equal the full run's trades exiting before the cut (gross layer; spread substitution medians are a cost estimate, not a signal) ==
+ cut 2022-06-01T13:00 UTC (m1 bars 525159): signals identical True; system trades before cut identical True (n=1442); open-at-cut trade matches True; each setup alone identical True  [8 s]
+ cut 2023-09-15T09:00 UTC (m1 bars 978864): signals identical True; system trades before cut identical True (n=2764); open-at-cut trade matches True; each setup alone identical True  [14 s]
+ cut 2025-03-03T20:00 UTC (m1 bars 1489055): signals identical True; system trades before cut identical True (n=4257); open-at-cut trade matches True; each setup alone identical True  [21 s]
+ TRUNCATION RESULT: PASS
+
+stage 0 done in 48 s

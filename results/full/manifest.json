@@ -1,0 +1,26 @@
+{
+ "<DATA_DIR>/US100.cash_Minute.parquet": {
+  "bytes": 48642103,
+  "sha256": "3a520ceca50949df8d347cdfc53a3c1a649e9da3a89af02849779a22900f5282"
+ },
+ "<DATA_DIR>/US100.cash_Minute5.parquet": {
+  "bytes": 12863150,
+  "sha256": "a42a04afcfb0395d3efd60e57bd184be89004d29ed3ee7f1a15e53a8e9f1f406"
+ },
+ "<DATA_DIR>/US100.cash_Minute15.parquet": {
+  "bytes": 5131472,
+  "sha256": "4aa2a4188767cfade65a95b1471629cd3e23746ca38be52468b5a556f75840b9"
+ },
+ "<DATA_DIR>/US100.cash_Hour.parquet": {
+  "bytes": 994943,
+  "sha256": "8e70d1a4618455ce5407ceab7b07cca11c662015d4f7089245eb1f3cf18d9800"
+ },
+ "<SPREAD1M_PATH> (US100.cash_spread1m.parquet)": {
+  "bytes": 15159314,
+  "sha256": "2e6b5dd5706127d9429071f80a37b108a566ade89d00e01bb20dfeeaa0fbbeac"
+ },
+ "<SWAP_PATH> (author's full swap file E1_SWAP.json; the sample ships only its US100.cash entry)": {
+  "bytes": 48367,
+  "sha256": "c982ab0f83bfe3ea5a84154b9882f2e53bdcbc440768b3c193d88a62ed50e981"
+ }
+}
